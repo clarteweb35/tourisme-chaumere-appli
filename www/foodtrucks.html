@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food-trucks du coin</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f6f9; margin: 0; padding: 15px; color: #333; }
+        .back { display: inline-block; margin-bottom: 15px; text-decoration: none; color: #007bff; font-weight: 600; }
+        
+        .truck-card {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .truck-icon { font-size: 2.5rem; background: #fff3e0; padding: 10px; border-radius: 10px; }
+        .truck-info h3 { margin: 0 0 5px 0; color: #e65100; font-size: 1.1rem; }
+        .truck-info p { margin: 2px 0; font-size: 0.9rem; color: #666; }
+        .badge { display: inline-block; background: #ffe0b2; color: #e65100; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: bold; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back">← Retour à l'accueil</a>
+    <h2>🍔 Food-trucks disponibles</h2>
+
+    <!-- Exemple de fiches Food-trucks -->
+    <div class="truck-card">
+        <div class="truck-icon">🍕</div>
+        <div class="truck-info">
+            <h3>Le P'tit Fournil (Pizza)</h3>
+            <p>📍 Place de la Mairie</p>
+            <p>⏰ Ce soir de 18h à 21h30</p>
+            <span class="badge">Présent ce soir</span>
+        </div>
+    </div>
+
+    <div class="truck-card">
+        <div class="truck-icon">🍔</div>
+        <div class="truck-info">
+            <h3>Burger Breizh</h3>
+            <p>📍 Zone artisanale</p>
+            <p>⏰ Midi & Soir</p>
+            <span class="badge">Présent aujourd'hui</span>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,14 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tourisme Chaumeré</title>
     <style>
-        body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; background: #faf8f5; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 15px;
+            color: #333;
+        }
+        .header {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .time { font-size: 1.5rem; font-weight: bold; }
+        .weather { text-align: right; font-size: 0.9rem; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.2s;
+        }
+        .card:active { transform: scale(0.97); }
+        .emoji { font-size: 2.5rem; margin-bottom: 8px; display: block; }
+        .label { font-size: 0.95rem; font-weight: 600; }
     </style>
 </head>
 <body>
-    <script>window.location.replace("https://clarteweb35.github.io/autour-de-rennes/agenda/");</script>
+
+    <div class="header">
+        <div class="time" id="clock">--:--</div>
+        <div class="weather">
+            <span id="temp">Chaumeré</span><br>
+            <small>Infos en direct</small>
+        </div>
+    </div>
+
+    <div class="grid">
+        <!-- Remplacez ici par vos vrais liens Tourisme Chaumeré -->
+        <a href="https://le-relais-de-chaumere.fr/agenda/" class="card" target="_blank">
+            <span class="emoji">📅</span>
+            <span class="label">Activités & Agenda</span>
+        </a>
+        <a href="https://le-relais-de-chaumere.fr/foodtrucks/" class="card" target="_blank">
+            <span class="emoji">🍔</span>
+            <span class="label">Food-trucks</span>
+        </a>
+        <a href="https://le-relais-de-chaumere.fr/marches/" class="card" target="_blank">
+            <span class="emoji">🛒</span>
+            <span class="label">Marchés du jour</span>
+        </a>
+        <a href="https://le-relais-de-chaumere.fr/carburant/" class="card" target="_blank">
+            <span class="emoji">⛽</span>
+            <span class="label">Carburant</span>
+        </a>
+        <a href="https://le-relais-de-chaumere.fr/bornes/" class="card" target="_blank">
+            <span class="emoji">⚡</span>
+            <span class="label">Bornes VE</span>
+        </a>
+        <a href="https://le-relais-de-chaumere.fr/pharmacies/" class="card" target="_blank">
+            <span class="emoji">💊</span>
+            <span class="label">Pharmacies</span>
+        </a>
+        <a href="https://le-relais-de-chaumere.fr/annuaire/" class="card" target="_blank">
+            <span class="emoji">📞</span>
+            <span class="label">Annuaire</span>
+        </a>
+        <a href="https://le-relais-de-chaumere.fr/contact/" class="card" style="background: #e8f5e9; border: 2px dashed #4caf50;" target="_blank">
+            <span class="emoji">💡</span>
+            <span class="label" style="color: #2e7d32;">Participer</span>
+        </a>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock').innerText = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 </body>
 </html>

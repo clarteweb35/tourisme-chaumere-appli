@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prix du Carburant</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f6f9; margin: 0; padding: 15px; color: #333; }
+        .back { display: inline-block; margin-bottom: 15px; text-decoration: none; color: #007bff; font-weight: 600; }
+        
+        .station-card {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .station-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .station-name { font-weight: bold; font-size: 1.1rem; color: #2c3e50; }
+        .station-distance { font-size: 0.85rem; color: #7f8c8d; }
+        
+        .prices-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+        .price-box {
+            background: #f8f9fa;
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        .fuel-type { font-size: 0.75rem; color: #666; display: block; margin-bottom: 3px; }
+        .fuel-price { font-weight: bold; color: #e74c3c; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back">← Retour à l'accueil</a>
+    <h2>⛽ Prix du Carburant</h2>
+
+    <!-- Exemple de station -->
+    <div class="station-card">
+        <div class="station-header">
+            <span class="station-name">Supermarché Local</span>
+            <span class="station-distance">📍 À 3 km</span>
+        </div>
+        <div class="prices-grid">
+            <div class="price-box">
+                <span class="fuel-type">E10 / SP95</span>
+                <span class="fuel-price">1.749 €</span>
+            </div>
+            <div class="price-box">
+                <span class="fuel-type">SP98</span>
+                <span class="fuel-price">1.819 €</span>
+            </div>
+            <div class="price-box">
+                <span class="fuel-type">Gazole</span>
+                <span class="fuel-price">1.689 €</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
