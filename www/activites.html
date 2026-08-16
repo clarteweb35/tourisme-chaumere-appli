@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda & Activités</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f6f9; margin: 0; padding: 15px; color: #333; }
+        .back { display: inline-block; margin-bottom: 15px; text-decoration: none; color: #007bff; font-weight: 600; }
+        
+        /* Barre de filtres horizontale défilante */
+        .filters-container {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            scrollbar-width: none; /* Cache la barre sous Firefox */
+        }
+        .filters-container::-webkit-scrollbar { display: none; } /* Cache sous Chrome/Safari */
+
+        .filter-btn {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            cursor: pointer;
+            font-weight: 500;
+            color: #555;
+            transition: all 0.2s;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        /* Liste des événements */
+        .event-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .event-tag { font-size: 0.8rem; font-weight: bold; color: #007bff; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back">← Retour à l'accueil</a>
+    <h2>📅 Agenda & Activités</h2>
+
+    <!-- Filtres par catégorie -->
+    <div class="filters-container">
+        <button class="filter-btn active" onclick="filterEvents('all')">Tous</button>
+        <button class="filter-btn" onclick="filterEvents('atelier')">🏺 Atelier</button>
+        <button class="filter-btn" onclick="filterEvents('concert')">🎸 Concert</button>
+        <button class="filter-btn" onclick="filterEvents('conference')">🎤 Conférence</button>
+        <button class="filter-btn" onclick="filterEvents('culture')">🏛️ Culture</button>
+        <button class="filter-btn" onclick="filterEvents('festival')">🎉 Festival</button>
+        <button class="filter-btn" onclick="filterEvents('spectacle')">🎭 Spectacle</button>
+        <button class="filter-btn" onclick="filterEvents('sport')">⚽ Sport</button>
+    </div>
+
+    <!-- Liste des événements -->
+    <div id="eventsList">
+        <div class="event-card" data-category="concert">
+            <span class="event-tag">🎸 Concert</span>
+            <h3>Concert en plein air sur la place</h3>
+            <p>Ce soir à 21h00 - Entrée libre</p>
+        </div>
+        <div class="event-card" data-category="sport">
+            <span class="event-tag">⚽ Sport</span>
+            <h3>Tournoi de فوتبال inter-quartier</h3>
+            <p>Samedi à 14h - Stade municipal</p>
+        </div>
+        <div class="event-card" data-category="atelier">
+            <span class="event-tag">🏺 Atelier</span>
+            <h3>Initiation à la poterie locale</h3>
+            <p>Dimanche à 10h - Salle des fêtes</p>
+        </div>
+    </div>
+
+    <script>
+        function filterEvents(category) {
+            // Gestion visuelle des boutons actifs
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filtrage des cartes d'événements
+            document.querySelectorAll('.event-card').forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
