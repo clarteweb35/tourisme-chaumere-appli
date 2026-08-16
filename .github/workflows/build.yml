@@ -18,7 +18,7 @@ jobs:
           node-version: 18
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: 'zulu'
           java-version: '17'
@@ -29,12 +29,13 @@ jobs:
       - name: Add Android Platform
         run: npx cap add android
 
-      - name: Build Android Project
+      - name: Sync Capacitor
         run: npx cap sync android
 
       - name: Build Release AAB
         run: |
           cd android
+          chmod +x gradlew
           ./gradlew bundleRelease
 
       - name: Upload Artifact
