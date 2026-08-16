@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Tourisme Chaumeré</string>
+    <string name="title_activity_main">Tourisme Chaumeré</string>
+    <string name="package_name">fr.clarteweb.tourisme.chaumere</string>
+    <string name="custom_url_scheme">fr.clarteweb.tourisme.chaumere</string>
+</resources>

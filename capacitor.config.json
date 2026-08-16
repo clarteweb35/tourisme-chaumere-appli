@@ -1,0 +1,12 @@
+{
+  "appId": "fr.clarteweb.tourisme.chaumere",
+  "appName": "Tourisme Chaumeré",
+  "webDir": "www",
+  "server": {
+    "url": "https://clarteweb35.github.io/autour-de-rennes/agenda/",
+    "allowNavigation": ["clarteweb35.github.io"]
+  },
+  "android": {
+    "allowMixedContent": true
+  }
+}
